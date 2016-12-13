@@ -1,0 +1,111 @@
+.sidebar{
+  background-color: $lightest-grey;
+  margin-bottom: 40px;
+}
+
+.menu{
+  padding-bottom: 40px;
+  @include mq($from:xs, $until:lg){
+    padding-bottom: 20px;
+  }
+
+  &__title{
+    margin: 0;
+    background-color: $lighter-grey;
+    font-size: $font-size-menu-title;
+    font-weight: normal;
+    padding: 5px;
+  }
+  &__list{
+    font-size: $font-size-menu;
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+    @include mq($from:xs, $until:lg){
+      display: none;
+    }
+  }
+  &__link{
+    color: $text-color;
+  }
+  &__link-more{
+    display: block;
+    font-size: $font-size-menu;
+    padding: 0 5px;
+    margin-top: 10px;
+    @include mq($from:xs, $until:lg){
+      display: none;
+    }
+  }
+
+
+  &--necessary{
+    .menu__title-link{
+      color: $title-blue;
+    }
+  }
+  &--certificates{
+    .menu__title-link{
+      color: $title-green;
+    }
+  }
+  &--general{
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    background-color: $pale-orange;    
+    .menu__list{
+      display: block;
+    }    
+    .menu__item{
+      margin: 10px 0;
+    }
+    .menu__link{
+      font-weight: 700;
+      color: $link-color;
+    }
+  }
+  &--production{
+    .menu__title-link{
+      color: $title-blue;
+    }
+  }
+  &--cost{
+    .menu__title-link{
+      color: $title-green;
+    }
+  }
+  &--customs{
+    .menu__title-link{
+      color: $title-orange;
+    }
+  }
+  &--registry{
+    .menu__title-link{
+      color: $title-violet;
+    }
+  }
+}
+
+// .advertisments{
+//   &__banner{
+//     img{
+//       display: block;
+//       width: 230px;
+//       height: 330px;
+//     }
+//   }
+// }
+
+.date{
+  white-space: nowrap;
+  font-size: $font-size-small;
+  font-weight: 700;
+  padding: 10px 0;
+  margin: 0 10px;
+  span{
+    color: $orange;    
+    &:last-of-type{
+      font-size: $font-size;
+    }
+  }
+}

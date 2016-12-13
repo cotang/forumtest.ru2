@@ -1,0 +1,117 @@
+include ../abstracts/bemto/bemto.pug
+
+
++b.SECTION.quiz
+  +e.H2.title Викторина
+  +e.text Выиграйте скидку на оформление сертификата
+  +e.steps
+    +b.quiz-step--01
+      +e.H3.title Задание 1 из 5
+      +e.text
+        p 1.На кого может быть оформлено свидетельство о госрегистрации (СГР) зарубежной продукции
+      +e.FIELDSET.fieldset
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step1', value='option11')
+          | только на российскую компанию импортёра
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step1', value='option12')
+          | на российскую компанию импортёра или зарубежного производителя
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step1', value='option13')
+          | только на зарубежного производителя
+      +e.btn
+        +b.A.btn--quiz(href='#') Далее
+
+    +b.quiz-step--02
+      +e.H3.title Задание 2 из 5
+      +e.text
+        p 2.Каким знаком маркируется продукция, если на нее оформлен сертификат соответствия ТР ТС
+      +e.FIELDSET.fieldset
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step2', value='option21')
+          | СТР
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step2', value='option22')
+          | РСТ
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step2', value='option23')
+          | ЕАС
+      +e.btn
+        +b.A.btn--quiz(href='#') Далее 
+
+    +b.quiz-step--03
+      +e.H3.title Задание 3 из 5
+      +e.text
+        p 3.На кого может быть оформлено свидетельство о госрегистрации (СГР) зарубежной продукции
+      +e.FIELDSET.fieldset
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step3', value='option31')
+          | только на российскую компанию импортёра
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step3', value='option32')
+          | на российскую компанию импортёра или зарубежного производителя
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step3', value='option33')
+          | только на зарубежного производителя
+      +e.btn
+        +b.A.btn--quiz(href='#') Далее
+
+    +b.quiz-step--04
+      +e.H3.title Задание 4 из 5
+      +e.text
+        p 4.Каким знаком маркируется продукция, если на нее оформлен сертификат соответствия ТР ТС
+      +e.FIELDSET.fieldset
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step4', value='option41')
+          | СТР
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step4', value='option42')
+          | РСТ
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step4', value='option43')
+          | ЕАС
+      +e.btn
+        +b.A.btn--quiz(href='#') Далее 
+
+    +b.quiz-step--05
+      +e.H3.title Задание 5 из 5
+      +e.text
+        p 5.На кого может быть оформлено свидетельство о госрегистрации (СГР) зарубежной продукции
+      +e.FIELDSET.fieldset
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step5', value='option51')
+          | только на российскую компанию импортёра
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step5', value='option52')
+          | на российскую компанию импортёра или зарубежного производителя
+        +e.LABEL.label
+          +e.INPUT.input(type='radio', name='step5', value='option53')
+          | только на зарубежного производителя
+      +e.btn
+        +b.A.btn--quiz(href='#') Далее 
+
+    +b.quiz-step--total
+      +e.H3.title Информация
+      +b.SECTION(class='form--quiz')
+        form(action='', method='')
+          .form-group.field-name
+            +e.description Ваше имя
+            +e.INPUT.input(type='text', name='Имя')
+            p.help-block Ошибка заполнения поля формы
+          .form-group.field-email.required
+            +e.description Ваш email*
+            +e.INPUT.input(type='email', name='Email')
+            p.help-block Ошибка заполнения поля формы
+          .form-group.field-hidden
+            +e.INPUT.input(type='hidden', name='step1')
+          .form-group.field-hidden
+            +e.INPUT.input(type='hidden', name='step2')
+          .form-group.field-hidden
+            +e.INPUT.input(type='hidden', name='step3')
+          .form-group.field-hidden
+            +e.INPUT.input(type='hidden', name='step4')
+          .form-group.field-hidden
+            +e.INPUT.input(type='hidden', name='step5')
+          .form-group
+            +b.BUTTON.btn--form(type='submit') Завершить тест
+            p.help-block.help-block-success Результаты вашего теста отправлены

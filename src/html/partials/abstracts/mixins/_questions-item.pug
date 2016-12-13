@@ -1,0 +1,11 @@
+mixin questionsItem(title, askPerson, askAddress, askText)
+  +b.ARTICLE.question-item(itemscope, itemtype="http://schema.org/Question")
+    +e.H2.subtitle
+      a(href="single-question.html", itemprop="headline") #{title}   
+    +e.ask 
+      +e.info
+        +e.SPAN.person(itemprop="author") #{askPerson}
+        | #{askAddress}    
+      +e.text(itemprop="text") !{askText}
+    +e.A.link(href="single-question.html") Читать ответ
+

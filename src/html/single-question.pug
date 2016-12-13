@@ -1,0 +1,36 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--single-question
+    +e.flex-wrapper
+      +e.left   
+        // Left sidebar
+        include partials/components/_left-sidebar.pug 
+
+      +e.page__center
+        // Nav
+        include partials/components/_nav.pug
+        // Content
+        +b.SECTION.content
+          +b.ARTICLE.question-item(itemscope, itemtype="http://schema.org/Article")
+            +e.H1.title(itemprop="headline") Сертификация игрушек авторской работы  
+            +e.ask(itemprop="articleSection", itemscope, itemtype="http://schema.org/Question")
+              +e.info 
+                +e.SPAN.person(itemprop="author") Оксана 
+                | (Москва и Московская область, 13 июля 2016)
+              +e.text(itemprop="text")
+                p Я изготавливаю авторские игрушки из полимерной глины, меха, проволоки, паралона и разукрашиваю акриловыми красками. Необходимы ли мне какие нибудь сертификаты на продажу данных изделий?
+            +e.answer(itemprop="articleSection", itemscope, itemtype="http://schema.org/Answer")
+              +e.info 
+                +e.SPAN.person(itemprop="author") Анастасия
+                |, +7 (495) 783-29-26, info@gostestural.ru 
+              +e.text(itemprop="text")
+                p Добрый день,Оксана! 
+                p Если у вас данная продукция будет продаваться как сувенир, то вы на этикетке должны указывать что у вас сувенирная продукция. В РФ она не подлежит обязательной сертификации.
+                p В таком случае можно оформить добровольной сертификат и отказное письмо, что продукция не подлежит обязательной сертификации.
+                p Если вы будете позиционировать как игрушки и с ними будут играть дети,то данная продукция подлежит оформлению сертификата по Тех.Регламенту Таможенного Союза "О безопасности игрушек".
+                p Для просчета стоимости необходимо предоставить полное описание с указанием тех.характеристик,вида материала из которого изготовлена каждая игрушка и возраст детей.
+            +e.A.link(href="page-questions.html") << Назад                          
+      +e.page__right
+        // Right sidebar
+        include partials/components/_right-sidebar.pug 

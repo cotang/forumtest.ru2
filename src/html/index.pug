@@ -1,0 +1,31 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--front-page
+    +e.flex-wrapper
+      +e.left   
+        // Left sidebar
+        include partials/components/_left-sidebar.pug 
+        
+      +e.page__center
+        // Nav
+        include partials/components/_nav.pug
+        +e.page__inner
+          +e.page__advantages
+            // Advantages
+            include partials/components/_advantages.pug
+          +b.page-form
+            +e.H2.title Есть вопросы?
+            +e.text по цене, срокам и типу документа? Пишите!
+            // Form question
+            include partials/components/_form--question.pug 
+        // News section
+        include partials/components/_news-section.pug
+        // Certification links
+        include partials/components/_certification-links.pug 
+
+      +e.page__right
+        // Right sidebar
+        include partials/components/_right-sidebar.pug 
+
+

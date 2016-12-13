@@ -1,0 +1,155 @@
+.page{
+  &--questions{
+    .question-item__ask{
+      background-color: $lightest-grey;
+      padding: 1px 10px;
+    }
+    .question-item__info{
+      text-align: right;
+      color: #808080;
+    }
+  }
+
+  &__flex-wrapper{
+    display: flex;
+    // flex-wrap: wrap;
+    align-items: stretch;
+    @include mq($from:xs, $until:lg){
+      position: relative;
+      overflow-x: hidden;
+    }    
+  }
+  &__left{
+    @include transition();
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
+    min-width: 220px;     
+    @include mq($from:xs, $until:lg){
+      position: absolute;
+      top: 0;
+      left: -220px;   /* изменяется скриптом */
+    }
+    &--visible{
+      @include mq($from:xs, $until:lg){
+        left: 0;
+      }
+    }
+  }
+  &__right{
+    @include transition();
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
+    min-width: 220px;     
+    @include mq($from:xs, $until:lg){
+      position: absolute;
+      top: 0;
+      right: -220px;   /* изменяется скриптом */
+    }
+    &--visible{
+      @include mq($from:xs, $until:lg){
+        right: 0;
+      }
+    }
+  }
+  &__center{
+    @include transition(); 
+    flex: 0 1 66.6667%;
+    @include mq($from:xs, $until:lg){
+      flex: 0 0 100%;
+      max-width: 100%;
+      position: relative;
+      right: 0;
+      left: 0;
+    }
+    &--moved-to-left{
+      @include mq($from:xs, $until:lg){
+        left: -220px;
+      }
+    }
+    &--moved-to-right{
+      @include mq($from:xs, $until:lg){
+        left: 220px;
+      }
+    }
+  }
+
+  &__inner{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__advantages{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+    @include mq($from:xs, $until:xl){
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.page-form{
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+  text-align: center;
+  @include mq($from:xs, $until:xl){
+    flex: 0 0 100%;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  
+  &__title{
+    color: $orange;
+    margin: 10px 0;
+    font-size: $font-size-title;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  &__text{
+    margin-bottom: 10px;
+  }
+  .form{
+    background-image: none;
+    background-color: $lightest-grey;
+    border-radius: 7px;
+    padding: 20px 20px 10px;    
+    &__description{
+      text-align: left;
+      background-color: $lighter-grey;
+      border-radius: 5px 0 0 5px;
+      flex: 0 0 120px;
+      margin-top: 0;
+    }
+    &__input{
+      background-color: $lighter-grey;
+      border-radius: 0 5px 5px 0;
+      // width: 180px;
+      width: calc(100% - 120px);
+      min-width: initial; 
+      border: none;
+    }
+    &__textarea{
+      background-color: $lighter-grey;
+      border-radius: 0 5px 5px 0;
+      // width: 180px; 
+      width: calc(100% - 120px);
+      min-width: initial;
+      border: none;
+    }
+    &__select{
+      background-color: $lighter-grey;
+      border-radius: 0 5px 5px 0;
+      // width: 180px;
+      width: calc(100% - 120px);
+      min-width: initial; 
+      border: none;
+    }
+  }
+  .btn--form{
+    margin-left: 0;
+  }
+  .form-group{
+    align-items: stretch;
+  }
+}

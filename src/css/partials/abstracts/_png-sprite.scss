@@ -1,0 +1,140 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$s-cert-docs-name: 's-cert-docs';
+$s-cert-docs-x: 0px;
+$s-cert-docs-y: 0px;
+$s-cert-docs-offset-x: 0px;
+$s-cert-docs-offset-y: 0px;
+$s-cert-docs-width: 250px;
+$s-cert-docs-height: 164px;
+$s-cert-docs-total-width: 250px;
+$s-cert-docs-total-height: 208px;
+$s-cert-docs-image: '../img/png-sprite.png';
+$s-cert-docs: (0px, 0px, 0px, 0px, 250px, 164px, 250px, 208px, '../img/png-sprite.png', 's-cert-docs', );
+$s-ok1-name: 's-ok1';
+$s-ok1-x: 51px;
+$s-ok1-y: 168px;
+$s-ok1-offset-x: -51px;
+$s-ok1-offset-y: -168px;
+$s-ok1-width: 20px;
+$s-ok1-height: 17px;
+$s-ok1-total-width: 250px;
+$s-ok1-total-height: 208px;
+$s-ok1-image: '../img/png-sprite.png';
+$s-ok1: (51px, 168px, -51px, -168px, 20px, 17px, 250px, 208px, '../img/png-sprite.png', 's-ok1', );
+$s-ok2-name: 's-ok2';
+$s-ok2-x: 75px;
+$s-ok2-y: 168px;
+$s-ok2-offset-x: -75px;
+$s-ok2-offset-y: -168px;
+$s-ok2-width: 20px;
+$s-ok2-height: 17px;
+$s-ok2-total-width: 250px;
+$s-ok2-total-height: 208px;
+$s-ok2-image: '../img/png-sprite.png';
+$s-ok2: (75px, 168px, -75px, -168px, 20px, 17px, 250px, 208px, '../img/png-sprite.png', 's-ok2', );
+$s-ok3-name: 's-ok3';
+$s-ok3-x: 99px;
+$s-ok3-y: 168px;
+$s-ok3-offset-x: -99px;
+$s-ok3-offset-y: -168px;
+$s-ok3-width: 20px;
+$s-ok3-height: 17px;
+$s-ok3-total-width: 250px;
+$s-ok3-total-height: 208px;
+$s-ok3-image: '../img/png-sprite.png';
+$s-ok3: (99px, 168px, -99px, -168px, 20px, 17px, 250px, 208px, '../img/png-sprite.png', 's-ok3', );
+$s-up-name: 's-up';
+$s-up-x: 0px;
+$s-up-y: 168px;
+$s-up-offset-x: 0px;
+$s-up-offset-y: -168px;
+$s-up-width: 47px;
+$s-up-height: 40px;
+$s-up-total-width: 250px;
+$s-up-total-height: 208px;
+$s-up-image: '../img/png-sprite.png';
+$s-up: (0px, 168px, 0px, -168px, 47px, 40px, 250px, 208px, '../img/png-sprite.png', 's-up', );
+$spritesheet-width: 250px;
+$spritesheet-height: 208px;
+$spritesheet-image: '../img/png-sprite.png';
+$spritesheet-sprites: ($s-cert-docs, $s-ok1, $s-ok2, $s-ok3, $s-up, );
+$spritesheet: (250px, 208px, '../img/png-sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

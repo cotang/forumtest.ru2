@@ -1,0 +1,32 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--questions
+    +e.flex-wrapper
+      +e.left   
+        // Left sidebar
+        include partials/components/_left-sidebar.pug 
+
+      +e.page__center
+        // Nav
+        include partials/components/_nav.pug
+        // Content
+        +b.SECTION.content
+          +e.H1.title Задайте ваш вопрос
+          +e.text 
+            p Возник вопрос по сертификации? Какие нужны документы? Сертификация или декларирование? Найти ответы очень легко: задайте вопрос, а затем оставьте адрес своей электронной почты.
+            p Наши квалифицированные специалисты предоставят наиболее полную информацию, максимально доступно и в кратчайшие сроки ответят на любые интересующие Вас вопросы касательно сертификации.
+            p Пишите, ответим с радостью!
+          +e.form
+            // Form question
+            include partials/components/_form--question.pug
+        // Questions
+        include partials/components/_questions.pug         
+                          
+      +e.page__right
+        // Right sidebar
+        include partials/components/_right-sidebar.pug 
+
+
+
+

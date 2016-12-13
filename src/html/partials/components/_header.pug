@@ -1,0 +1,24 @@
+include ../abstracts/bemto/bemto.pug
+
+// Header
++b.HEADER.header
+  +e.inner
+    // Logo
+    +e.logo    
+      +b.A.logo(href="index.html", itemscope, itemtype="http://schema.org/Brand")       
+        img(src="img/logo.png", alt="logo", title="logo", itemprop="logo")
+      +e.H2.title Единый портал сертификации
+    // Promo
+    +e.promo          
+      +b.promo
+        +e.H2.title Консультация от менеджеров центра сертификации
+        +e.UL.list
+          +e.item Компетентные специалисты
+          +e.item Быстрые ответы
+          +e.item Бесплатная консультация
+    +e.btn      
+      +b.A.btn--violet-header(href="page-call.html") Да, позвоните мне
+
+
+
+

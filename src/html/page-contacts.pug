@@ -1,0 +1,27 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--contacts
+    +e.flex-wrapper
+      +e.left   
+        // Left sidebar
+        include partials/components/_left-sidebar.pug 
+
+      +e.page__center
+        // Nav
+        include partials/components/_nav.pug
+        // Content
+        +b.SECTION.content
+          +e.H1.title Где получить сертификат
+          +e.text
+          // Contacts
+          +b.contacts
+            include partials/components/_contacts.pug 
+                          
+      +e.page__right
+        // Right sidebar
+        include partials/components/_right-sidebar.pug 
+
+
+
+
