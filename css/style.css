@@ -1171,7 +1171,7 @@ img {
   margin-bottom: 10px; }
 
 .certification-links {
-  margin: 0 15px;
+  margin: 0 15px 40px;
   background-color: #f3f3f4;
   -moz-columns: 2;
        columns: 2; }
