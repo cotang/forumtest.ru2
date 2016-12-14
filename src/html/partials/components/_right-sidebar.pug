@@ -17,24 +17,24 @@ include ../abstracts/bemto/bemto.pug
       .form-group.field-search
         +e.INPUT.input(type='text', name='Поиск', placeholder="Поиск по сайту...")
 
-  // Form authentification
-  +b.form--authentification
-    form(action='', method='')
-      .form-group.field-login
-        +e.description Имя пользователя
-        +e.INPUT.input(type='text', name='Логин')
-        p.help-block Ошибка заполнения поля формы
-      .form-group.field-password
-        +e.description Пароль
-        +e.INPUT.input(type='password', name='Пароль')
-        p.help-block Ошибка заполнения поля формы
-      .form-group.field-search
-        +e.INPUT.input(type='checkbox', name='Запомнить')
-        +e.SPAN.remember Запомнить меня
-      .form-group
-        +b.BUTTON.btn--form(type='submit') Войти
-    +e.A.link(href="page.html") Регистрация
-    +e.A.link(href="page.html") Забыли пароль?
+  //- // Form authentification
+  //- +b.form--authentification
+  //-   form(action='', method='')
+  //-     .form-group.field-login
+  //-       +e.description Имя пользователя
+  //-       +e.INPUT.input(type='text', name='Логин')
+  //-       p.help-block Ошибка заполнения поля формы
+  //-     .form-group.field-password
+  //-       +e.description Пароль
+  //-       +e.INPUT.input(type='password', name='Пароль')
+  //-       p.help-block Ошибка заполнения поля формы
+  //-     .form-group.field-search
+  //-       +e.INPUT.input(type='checkbox', name='Запомнить')
+  //-       +e.SPAN.remember Запомнить меня
+  //-     .form-group
+  //-       +b.BUTTON.btn--form(type='submit') Войти
+  //-   +e.A.link(href="page.html") Регистрация
+  //-   +e.A.link(href="page.html") Забыли пароль?
 
   // Menu production
   +b.SECTION.menu--production(itemscope, itemtype="http://schema.org/Service")
